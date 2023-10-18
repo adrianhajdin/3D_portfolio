@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
-import { Island } from "../models";
+import { Island, Plane, Sky } from "../models";
 import { Loader } from "../components";
 import { OrbitControls } from "@react-three/drei";
 
@@ -23,9 +23,9 @@ const Home = () => {
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
   return (
-    <section className='w-screen h-screen'>
+    <section className='w-screen h-screen relative'>
       <Canvas
-        className='w-screen h-screen'
+        className='w-screen h-screen bg-transparent'
         camera={{ near: 0.1, far: 1000, position: [20, 20, 20] }}
       >
         <Suspense fallback={<Loader />}>
@@ -51,7 +51,10 @@ const Home = () => {
             maxPolarAngle={Math.PI / 2}
             enableZoom={false}
           />
+
+          <Sky />
           <Island position={islandPosition} scale={islandScale} />
+          <Plane />
         </Suspense>
       </Canvas>
     </section>

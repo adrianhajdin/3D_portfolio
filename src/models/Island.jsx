@@ -36,6 +36,7 @@ export function Island(props) {
 
   return (
     // {Island 3D model from: https://sketchfab.com/3d-models/foxs-islands-163b68e09fcc47618450150be7785907}
+
     <a.group ref={islandGroup} {...props}>
       <mesh
         geometry={nodes.polySurface944_tree_body_0.geometry}
