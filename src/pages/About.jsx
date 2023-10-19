@@ -4,7 +4,7 @@ import {
 } from "react-vertical-timeline-component";
 
 import { hero } from "../assets/images";
-import { experiences, skills, socialLinks } from "../constants";
+import { experiences, skills } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -33,11 +33,11 @@ const About = () => {
         </p>
       </div>
 
-      <div className='mt-10 w-full h-auto rounded-xl'>
+      <div className='py-12 w-full h-auto rounded-xl'>
         <img src={hero} alt='hero' className='object-cover rounded-xl' />
       </div>
 
-      <div className='mt-20 flex flex-col'>
+      <div className='py-20 flex flex-col'>
         <h3 className='font-bold text-3xl relative font-poppins'>
           My <span className='fancy-text'>Skills.</span>
         </h3>
@@ -58,7 +58,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className='mt-20'>
+      <div className='py-20'>
         <h3 className='font-bold text-3xl relative font-poppins'>
           Work <span className='fancy-text'> Experience.</span>
         </h3>
@@ -129,28 +129,6 @@ const About = () => {
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>
-        </div>
-      </div>
-
-      <div className='mt-20 flex flex-wrap gap-7 items-center pt-4 border-t border-slate-200  justify-between'>
-        <p>
-          © 2023 <strong>Emilian Kasemi</strong>. All rights reserved.
-        </p>
-        <div className='flex gap-3 justify-center items-center'>
-          {socialLinks.map((link, index) => (
-            <a
-              key={link.name}
-              href={link.link}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <img
-                src={link.iconUrl}
-                alt={link.name}
-                className='w-6 h-6 object-contain'
-              />
-            </a>
-          ))}
         </div>
       </div>
     </section>
