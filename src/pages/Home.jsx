@@ -47,9 +47,10 @@ const Home = () => {
           <OrbitControls
             enableDamping
             dampingFactor={1}
+            enableZoom={false}
             minPolarAngle={Math.PI / 2}
             maxPolarAngle={Math.PI / 2}
-            enableZoom={false}
+            rotateSpeed={0.25}
           />
 
           <Sky />

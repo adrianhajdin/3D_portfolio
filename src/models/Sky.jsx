@@ -6,10 +6,8 @@ export function Sky() {
   const sky = useGLTF(skyScene);
 
   return (
-    <group>
-      <mesh>
-        <primitive object={sky.scene} />
-      </mesh>
-    </group>
+    <mesh>
+      <primitive object={sky.scene} />
+    </mesh>
   );
 }

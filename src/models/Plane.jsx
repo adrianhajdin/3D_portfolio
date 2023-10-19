@@ -1,5 +1,4 @@
-import { PerspectiveCamera, useGLTF } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 
 import planeScene from "../assets/3d/plane.glb";
@@ -9,10 +8,8 @@ export function Plane() {
   const plane = useGLTF(planeScene);
 
   return (
-    <group>
-      <mesh position={[20, -5, 0]} scale={0.01} rotation={[0, -10, 0]}>
-        <primitive ref={ref} object={plane.scene} />
-      </mesh>
-    </group>
+    <mesh position={[20, -5, 10]} scale={0.01} rotation={[-0.5, -5, 0.5]}>
+      <primitive ref={ref} object={plane.scene} />
+    </mesh>
   );
 }
