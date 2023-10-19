@@ -131,7 +131,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7 items-center pt-4 border-t border-slate-300  justify-between'>
+      <div className='mt-20 flex flex-wrap gap-7 items-center pt-4 border-t border-slate-200  justify-between'>
         <p>
           © 2023 <strong>Emilian Kasemi</strong>. All rights reserved.
         </p>

@@ -8,6 +8,12 @@
 background: radial-gradient(91.52% 65.47% at -32.84% 29.28%, rgba(255, 181, 248, 0.20) 0%, rgba(255, 181, 248, 0.00) 100%), radial-gradient(97.41% 115.61% at -5.88% 146.49%, rgba(162, 150, 242, 0.80) 0%, rgba(162, 150, 242, 0.00) 90.65%), radial-gradient(95.49% 107.42% at 74.82% -44.35%, rgba(133, 208, 255, 0.30) 0%, rgba(133, 208, 255, 0.00) 88.38%), radial-gradient(143.75% 101.28% at 117.58% 2.83%, rgba(201, 203, 242, 0.90) 0%, rgba(133, 208, 255, 0.00) 88.38%), #E5EFFF;
 } */
 
+.logo {
+  border-radius: 8.889px;
+  background: #FFF;
+  box-shadow: 0px 10px 35px -4px rgba(67, 83, 255, 0.15), 0px 1.5px 4px -1px rgba(67, 83, 255, 0.20);
+}
+
 .block-container {
   position: relative;
   width: 100px;
