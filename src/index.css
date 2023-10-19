@@ -1,3 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* body {
+background: radial-gradient(91.52% 65.47% at -32.84% 29.28%, rgba(255, 181, 248, 0.20) 0%, rgba(255, 181, 248, 0.00) 100%), radial-gradient(97.41% 115.61% at -5.88% 146.49%, rgba(162, 150, 242, 0.80) 0%, rgba(162, 150, 242, 0.00) 90.65%), radial-gradient(95.49% 107.42% at 74.82% -44.35%, rgba(133, 208, 255, 0.30) 0%, rgba(133, 208, 255, 0.00) 88.38%), radial-gradient(143.75% 101.28% at 117.58% 2.83%, rgba(201, 203, 242, 0.90) 0%, rgba(133, 208, 255, 0.00) 88.38%), #E5EFFF;
+} */
+
+.block-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transition: 250ms;
+  perspective: 500px;
+}
+
+ .block-container .btn-back {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: inherit;
+  height: inherit;
+  border-radius: 20px;
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: bottom right;
+  transform: rotateZ(15deg);
+  will-change: transform;
+  box-shadow: 16px 0 40px #e4e4e4;
+}
+
+.block-container .btn-back-1 {
+  background: linear-gradient(135deg, #4682eb -20%, #01beff 120%);
+}
+
+.block-container .btn-back-2 {
+  background: linear-gradient(135deg, #5c46eb -20%, #013fff 120%);
+}
+
+.block-container .btn-back-3 {
+  background: linear-gradient(135deg, #ebe046 -20%, #ffac01 120%);
+}
+
+.block-container .btn-front {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  border-radius: 20px;
+  background-color: #ffffff33;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+.block-container:hover > .btn-back {
+  transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg) rotateY(-20deg);
+}
+
+.block-container:hover > .btn-front {
+  transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
+}
+
+.fancy-text {
+  transform: translate(-50%,-50%);
+  background-image: linear-gradient(gold, gold);
+  background-size: 100% 10px;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+   transition: background-size .7s, background-position .5s ease-in-out;
+}
+
+.fancy-text:hover {
+  background-size: 100% 100%;
+  background-position: 0% 100%;
+  transition: background-position .7s, background-size .5s ease-in-out;
+}
