@@ -1,4 +1,4 @@
-import { css, express, git, github, html, javascript, linkedin, mongodb, motion, mui, nextjs, nodejs, react, redux, sass, tailwindcss, twitter, typescript } from "../assets/icons";
+import { css, express, git, github, html, javascript, linkedin, mongodb, motion, mui, nextjs, nodejs, react, redux, sass, tailwindcss, typescript } from "../assets/icons";
 import { meta, shopify, starbucks, tesla } from "../assets/images";
 
 export const skills = [
@@ -141,11 +141,11 @@ export const experiences = [
 
 
 export const socialLinks = [
-    {
-        name: 'Twitter',
-        iconUrl: twitter,
-        link: 'https://twitter.com/YourTwitterUsername',
-    },
+    // {
+    //     name: 'Twitter',
+    //     iconUrl: twitter,
+    //     link: 'https://twitter.com/YourTwitterUsername',
+    // },
     {
         name: 'GitHub',
         iconUrl: github,

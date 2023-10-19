@@ -10,7 +10,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 const About = () => {
   return (
-    <section className='max-w-5xl mx-auto sm:p-16 py-12 px-8 min-h-screen'>
+    <section className='max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-screen'>
       <h1 className='text-5xl font-extrabold leading-snug font-manrope'>
         Hello 👋
         <br />
@@ -44,8 +44,8 @@ const About = () => {
 
         <div className='mt-12 flex flex-wrap gap-12'>
           {skills.map((skill) => (
-            <div class='block-container' key={skill.name}>
-              <div class='btn-back' />
+            <div className='block-container' key={skill.name}>
+              <div className='btn-back' />
               <div className='btn-front flex justify-center items-center'>
                 <img
                   src={skill.imageUrl}
@@ -85,6 +85,7 @@ const About = () => {
           <VerticalTimeline>
             {experiences.map((experience, index) => (
               <VerticalTimelineElement
+                key={experience.company_name}
                 date={experience.date}
                 iconStyle={{ background: experience.iconBg }}
                 icon={
@@ -138,7 +139,7 @@ const About = () => {
         <div className='flex gap-3 justify-center items-center'>
           {socialLinks.map((link, index) => (
             <a
-              key={index}
+              key={link.name}
               href={link.link}
               target='_blank'
               rel='noopener noreferrer'
