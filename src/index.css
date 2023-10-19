@@ -16,8 +16,6 @@ background: radial-gradient(91.52% 65.47% at -32.84% 29.28%, rgba(255, 181, 248,
 
 .block-container {
   position: relative;
-  width: 100px;
-  height: 100px;
   transition: 250ms;
   perspective: 500px;
 }
@@ -28,7 +26,6 @@ background: radial-gradient(91.52% 65.47% at -32.84% 29.28%, rgba(255, 181, 248,
   z-index: -1;
   width: inherit;
   height: inherit;
-  border-radius: 20px;
   transition: 250ms;
   transform-style: preserve-3d;
   transform-origin: bottom right;
@@ -37,16 +34,32 @@ background: radial-gradient(91.52% 65.47% at -32.84% 29.28%, rgba(255, 181, 248,
   box-shadow: 16px 0 40px #e4e4e4;
 }
 
-.block-container .btn-back-1 {
-  background: linear-gradient(135deg, #4682eb -20%, #01beff 120%);
+.block-container .btn-back-red {
+  background: linear-gradient(135deg, #ff4b1f -20%, #ff9068 120%);
 }
 
-.block-container .btn-back-2 {
-  background: linear-gradient(135deg, #5c46eb -20%, #013fff 120%);
+.block-container .btn-back-green {
+  background: linear-gradient(135deg, #adfda2 -20%, #11d3f3 120%);
 }
 
-.block-container .btn-back-3 {
-  background: linear-gradient(135deg, #ebe046 -20%, #ffac01 120%);
+.block-container .btn-back-yellow {
+  background: linear-gradient(135deg, #F7971E -20%, #FFD200 120%);
+}
+
+.block-container .btn-back-blue {
+  background: linear-gradient(135deg, #0061ff -20%, #60efff 120%);
+}
+
+.block-container .btn-back-orange {
+  background: linear-gradient(135deg, #ff0f7b -20%, #f89b29 120%);
+}
+
+.block-container .btn-back-pink {
+  background: linear-gradient(135deg, #e81cff -20%, #40c9ff 120%);
+}
+
+.block-container .btn-back-black {
+  background: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
 }
 
 .block-container .btn-front {
@@ -55,7 +68,6 @@ background: radial-gradient(91.52% 65.47% at -32.84% 29.28%, rgba(255, 181, 248,
   z-index: 1;
   width: inherit;
   height: inherit;
-  border-radius: 20px;
   background-color: #ffffff33;
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
