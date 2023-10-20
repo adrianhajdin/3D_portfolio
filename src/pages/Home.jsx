@@ -23,9 +23,9 @@ const Home = () => {
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
   return (
-    <section className='w-screen h-screen relative'>
+    <section className='w-full h-screen relative'>
       <Canvas
-        className='w-screen h-screen bg-transparent'
+        className='w-full h-screen bg-transparent'
         camera={{ near: 0.1, far: 1000, position: [20, 20, 20] }}
       >
         <Suspense fallback={<Loader />}>
