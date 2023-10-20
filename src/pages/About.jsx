@@ -15,7 +15,7 @@ const About = () => {
         Hello 👋
         <br />
         I'm{" "}
-        <span className='bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent font-bold drop-shadow font-poppins'>
+        <span className='bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-bold drop-shadow font-poppins'>
           Emilian Kasemi
         </span>
       </h1>
@@ -33,8 +33,15 @@ const About = () => {
         </p>
       </div>
 
-      <div className='py-12 w-full h-auto rounded-xl'>
-        <img src={hero} alt='hero' className='object-cover rounded-xl' />
+      <div class='card my-20' data-color='blue'>
+        <img class='card-front-image card-image' src={hero} />
+        <div class='card-faders'>
+          {Array(7)
+            .fill()
+            .map((_, index) => (
+              <img key={index} class='card-fader card-image' src={hero} />
+            ))}
+        </div>
       </div>
 
       <div className='py-20 flex flex-col'>

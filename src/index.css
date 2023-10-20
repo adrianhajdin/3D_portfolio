@@ -4,9 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-background: radial-gradient(91.52% 65.47% at -32.84% 29.28%, rgba(255, 181, 248, 0.20) 0%, rgba(255, 181, 248, 0.00) 100%), radial-gradient(97.41% 115.61% at -5.88% 146.49%, rgba(162, 150, 242, 0.80) 0%, rgba(162, 150, 242, 0.00) 90.65%), radial-gradient(95.49% 107.42% at 74.82% -44.35%, rgba(133, 208, 255, 0.30) 0%, rgba(133, 208, 255, 0.00) 88.38%), radial-gradient(143.75% 101.28% at 117.58% 2.83%, rgba(201, 203, 242, 0.90) 0%, rgba(133, 208, 255, 0.00) 88.38%), #E5EFFF;
-} */
+:root {
+  --blue-rgb: 237 245 255;
+  --green-rgb: 125 161 35;
+}
+
+body:has(.card[data-color="blue"]:hover) {
+  background-color: rgb(var(--blue-rgb) / 25%);
+}
+
+body:has(.card[data-color="green"]:hover) {
+  background-color: rgb(var(--green-rgb) / 25%);
+}
 
 .logo {
   border-radius: 8.889px;
@@ -87,7 +96,7 @@ background: radial-gradient(91.52% 65.47% at -32.84% 29.28%, rgba(255, 181, 248,
 
 .fancy-text {
   transform: translate(-50%,-50%);
-  background-image: linear-gradient(gold, gold);
+  background-image: linear-gradient(#4d9dff, #00c6ff);
   background-size: 100% 10px;
   background-repeat: no-repeat;
   background-position: 0% 100%;
@@ -98,4 +107,98 @@ background: radial-gradient(91.52% 65.47% at -32.84% 29.28%, rgba(255, 181, 248,
   background-size: 100% 100%;
   background-position: 0% 100%;
   transition: background-position .7s, background-size .5s ease-in-out;
+}
+
+.card {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: scale 100ms;
+}
+
+.card .card-front-image {
+  position: relative;
+  z-index: 2;
+}
+
+.card .card-image {
+  width: 100%;
+  height: auto;
+  border-radius: clamp(0.5rem, 0.75vw, 2rem);
+}
+
+.card-faders {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1500ms;
+  pointer-events: none;
+}
+
+.card:hover .card-faders {
+  opacity: 1;
+}
+
+.card:active {
+  scale: 0.98;
+}
+
+.card-fader {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.card-fader:nth-child(odd) {
+  animation: fade-left 3s linear infinite;
+}
+
+.card-fader:nth-child(even) {
+  animation: fade-right 3s linear infinite;
+}
+
+.card-fader:is(:nth-child(3), :nth-child(4)) {
+  animation-delay: 750ms;
+}
+
+.card-fader:is(:nth-child(5), :nth-child(6)) {
+  animation-delay: 1500ms;
+}
+
+.card-fader:is(:nth-child(7), :nth-child(8)) {
+  animation-delay: 2250ms;
+}
+
+@keyframes fade-left {
+  from {
+    scale: 1;
+    translate: 0%;
+    opacity: 1;
+  }
+  
+  to {
+    scale: 0.8;
+    translate: -30%;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-right {
+  from {
+    scale: 1;
+    translate: 0%;
+    opacity: 1;
+  }
+  
+  to {
+    scale: 0.8;
+    translate: 30%;
+    opacity: 0;
+  }
 }
