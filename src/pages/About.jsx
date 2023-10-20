@@ -10,8 +10,8 @@ import "react-vertical-timeline-component/style.min.css";
 
 const About = () => {
   return (
-    <section className='max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-screen'>
-      <h1 className='text-5xl font-extrabold leading-snug font-manrope'>
+    <section className='max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-6 min-h-screen'>
+      <h1 className='sm:text-5xl text-3xl font-extrabold sm:leading-snug font-manrope'>
         Hello 👋
         <br />
         I'm{" "}
@@ -38,15 +38,15 @@ const About = () => {
       </div>
 
       <div className='py-20 flex flex-col'>
-        <h3 className='font-bold text-3xl relative font-poppins'>
+        <h3 className='font-bold sm:text-3xl text-xl relative font-poppins'>
           My <span className='fancy-text'>Skills.</span>
         </h3>
 
-        <div className='mt-12 flex flex-wrap gap-12'>
+        <div className='mt-16 flex flex-wrap gap-12'>
           {skills.map((skill) => (
-            <div className='block-container w-24 h-24' key={skill.name}>
-              <div className='btn-back rounded-2xl' />
-              <div className='btn-front rounded-2xl flex justify-center items-center'>
+            <div className='block-container w-20 h-20' key={skill.name}>
+              <div className='btn-back rounded-xl' />
+              <div className='btn-front rounded-xl flex justify-center items-center'>
                 <img
                   src={skill.imageUrl}
                   alt={skill.name}
@@ -59,7 +59,7 @@ const About = () => {
       </div>
 
       <div className='py-20'>
-        <h3 className='font-bold text-3xl relative font-poppins'>
+        <h3 className='font-bold sm:text-3xl text-xl relative font-poppins'>
           Work <span className='fancy-text'> Experience.</span>
         </h3>
         <div className='mt-10 flex flex-col gap-3 font-sans text-slate-500'>

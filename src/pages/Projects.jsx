@@ -5,12 +5,12 @@ import { projects } from "../constants";
 const Projects = () => {
   return (
     <section className='max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-screen'>
-      <h1 className='text-5xl font-extrabold leading-snug font-manrope'>
+      <h1 className='sm:text-5xl text-3xl font-extrabold sm:leading-snug font-manrope'>
         A Portfolio of{" "}
-        <span className='bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold'>
+        <span className='bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent drop-shadow font-extrabold'>
           Innovative
         </span>{" "}
-        <br /> Creations and Developments
+        <br className='sm:block hidden' /> Creations and Developments
       </h1>
 
       <p className='font-sans text-slate-500 mt-2 leading-relaxed'>
