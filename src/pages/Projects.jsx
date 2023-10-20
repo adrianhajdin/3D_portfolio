@@ -13,7 +13,7 @@ const Projects = () => {
         <br className='sm:block hidden' /> Creations and Developments
       </h1>
 
-      <p className='font-sans text-slate-500 mt-2 leading-relaxed'>
+      <p className='text-slate-500 mt-2 leading-relaxed'>
         I've embarked on numerous projects throughout the years, but these are
         the ones I hold closest to my heart. Many of them are open-source, so if
         you come across something that piques your interest, feel free to
@@ -36,7 +36,7 @@ const Projects = () => {
             </div>
 
             <div className='mt-5 flex flex-col'>
-              <b className='text-2xl font-poppins'>{project.name}</b>
+              <b className='text-2xl'>{project.name}</b>
               <p className='font-manrope mt-2 text-slate-500'>
                 {project.description}
               </p>

@@ -15,14 +15,14 @@ const About = () => {
         Hello 👋
         <br />
         I'm{" "}
-        <span className='bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-bold drop-shadow font-poppins'>
-          Emilian Kasemi
+        <span className='bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-extrabold drop-shadow'>
+          Adrian Hajdin
         </span>
       </h1>
 
-      <div className='mt-10 flex flex-col gap-3 font-sans text-slate-500'>
+      <div className='mt-10 flex flex-col gap-3 text-slate-500'>
         <p>
-          Hi, I am Emilian Kasemi. I am a Software Engineer. I am from Albania.
+          Hi, I am Adrian Hajdin. I am a Software Engineer. I am from Croatia.
         </p>
         <p>
           Front-End Engineer / Creative Developer / Game Developer Seeking to
@@ -45,7 +45,7 @@ const About = () => {
       </div>
 
       <div className='py-20 flex flex-col'>
-        <h3 className='font-bold sm:text-3xl text-xl relative font-poppins'>
+        <h3 className='font-bold sm:text-3xl text-xl relative'>
           My <span className='fancy-text'>Skills.</span>
         </h3>
 
@@ -66,10 +66,10 @@ const About = () => {
       </div>
 
       <div className='py-20'>
-        <h3 className='font-bold sm:text-3xl text-xl relative font-poppins'>
+        <h3 className='font-bold sm:text-3xl text-xl relative'>
           Work <span className='fancy-text'> Experience.</span>
         </h3>
-        <div className='mt-10 flex flex-col gap-3 font-sans text-slate-500'>
+        <div className='mt-10 flex flex-col gap-3 text-slate-500'>
           <p>
             Throughout my career, I've had the privilege to work with a diverse
             range of companies and organizations, contributing my skills and
@@ -116,7 +116,7 @@ const About = () => {
                     {experience.title}
                   </h3>
                   <p
-                    className='font-poppins text-gray-950 font-semibold'
+                    className='text-gray-950 font-semibold'
                     style={{ margin: 0 }}
                   >
                     {experience.company_name}
