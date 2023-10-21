@@ -8,6 +8,8 @@ const Home = () => {
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
 
+  console.log({ currentStage });
+
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
 
@@ -28,7 +30,7 @@ const Home = () => {
 
     if (window.innerWidth < 768) {
       screenScale = [0.5, 0.5, 0.5];
-      screenPosition = [0, 0, -43.4];
+      screenPosition = [0, -5.7, -43.4];
     } else {
       screenScale = [1, 1, 1];
       screenPosition = [0, -5.7, -43.4];
@@ -42,6 +44,14 @@ const Home = () => {
 
   return (
     <section className='w-full h-screen relative'>
+      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+        {currentStage === 1 ? (
+          <p>First Stage {currentStage}</p>
+        ) : (
+          <p>Other Stages {currentStage}</p>
+        )}
+      </div>
+
       <Canvas
         className={`w-full h-screen bg-transparent ${
           isRotating ? "cursor-grabbing" : "cursor-grab"
@@ -71,7 +81,7 @@ const Home = () => {
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}
             position={islandPosition}
-            rotation={[0.1, 0.67, 0]}
+            rotation={[0.1, 4.7077, 0]}
             scale={islandScale}
           />
           <Plane
