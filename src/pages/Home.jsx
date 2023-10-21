@@ -1,9 +1,8 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
-import { Island, Plane, Sky } from "../models";
+import { Bird, Island, Plane, Sky } from "../models";
 import { Loader } from "../components";
-import { OrbitControls } from "@react-three/drei";
 
 const Home = () => {
   const [currentStage, setCurrentStage] = useState(1);
@@ -45,7 +44,7 @@ const Home = () => {
     <section className='w-full h-screen relative'>
       <Canvas
         className={`w-full h-screen bg-transparent ${
-          isRotating ? "cursor-grab" : "cursor-grabbing"
+          isRotating ? "cursor-grabbing" : "cursor-grab"
         }`}
         camera={{ near: 0.1, far: 1000 }}
       >
@@ -65,6 +64,7 @@ const Home = () => {
             intensity={1}
           />
 
+          <Bird />
           <Sky isRotating={isRotating} />
           <Island
             isRotating={isRotating}
