@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import { Island, Plane, Sky } from "../models";
@@ -6,6 +6,24 @@ import { Loader } from "../components";
 import { OrbitControls } from "@react-three/drei";
 
 const Home = () => {
+  const [currentStage, setCurrentStage] = useState(1);
+  const [isRotating, setIsRotating] = useState(false);
+
+  const adjustBiplaneForScreenSize = () => {
+    let screenScale, screenPosition;
+
+    // If screen width is less than 768px, adjust the scale and position
+    if (window.innerWidth < 768) {
+      screenScale = [0.4, 0.4, 0.4];
+      screenPosition = [0, -1, 0];
+    } else {
+      screenScale = [2.5, 2.5, 2.5];
+      screenPosition = [0, -4, -4];
+    }
+
+    return [screenScale, screenPosition];
+  };
+
   const adjustIslandForScreenSize = () => {
     let screenScale, screenPosition;
 
@@ -13,20 +31,23 @@ const Home = () => {
       screenScale = [0.5, 0.5, 0.5];
       screenPosition = [0, 0, -43.4];
     } else {
-      screenScale = [0.65, 0.65, 0.65];
-      screenPosition = [0, -7, 0];
+      screenScale = [1, 1, 1];
+      screenPosition = [0, -5.7, -43.4];
     }
 
     return [screenScale, screenPosition];
   };
 
+  const [biplaneScale, biplanePosition] = adjustBiplaneForScreenSize();
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
   return (
     <section className='w-full h-screen relative'>
       <Canvas
-        className='w-full h-screen bg-transparent'
-        camera={{ near: 0.1, far: 1000, position: [20, 20, 20] }}
+        className={`w-full h-screen bg-transparent ${
+          isRotating ? "cursor-grab" : "cursor-grabbing"
+        }`}
+        camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={1.5} />
@@ -44,18 +65,21 @@ const Home = () => {
             intensity={1}
           />
 
-          <OrbitControls
-            enableDamping
-            dampingFactor={1}
-            enableZoom={false}
-            minPolarAngle={Math.PI / 2}
-            maxPolarAngle={Math.PI / 2}
-            rotateSpeed={0.25}
+          <Sky isRotating={isRotating} />
+          <Island
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
+            position={islandPosition}
+            rotation={[0.1, 0.67, 0]}
+            scale={islandScale}
           />
-
-          <Sky />
-          <Island position={islandPosition} scale={islandScale} />
-          <Plane />
+          <Plane
+            isRotating={isRotating}
+            position={biplanePosition}
+            rotation={[0, 20.1, 0]}
+            scale={biplaneScale}
+          />
         </Suspense>
       </Canvas>
     </section>

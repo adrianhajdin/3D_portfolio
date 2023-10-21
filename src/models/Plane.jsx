@@ -1,15 +1,24 @@
-import { useGLTF } from "@react-three/drei";
-import { useRef } from "react";
+import { useGLTF, useAnimations } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { useEffect, useRef } from "react";
 
 import planeScene from "../assets/3d/plane.glb";
 
-export function Plane() {
+export function Plane({ isRotating, ...props }) {
   const ref = useRef();
-  const plane = useGLTF(planeScene);
+  const { scene, animations } = useGLTF(planeScene);
+  const { actions } = useAnimations(animations, ref);
+
+  useEffect(() => {
+    Object.values(actions).forEach((action) => action.stop());
+    if (isRotating) {
+      actions["Take 001"].play();
+    }
+  }, [actions, isRotating]);
 
   return (
-    <mesh position={[20, -5, 10]} scale={0.01} rotation={[-0.5, -5, 0.5]}>
-      <primitive ref={ref} object={plane.scene} />
+    <mesh {...props} ref={ref}>
+      <primitive object={scene} />
     </mesh>
   );
 }
