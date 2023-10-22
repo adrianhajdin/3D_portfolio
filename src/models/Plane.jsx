@@ -1,6 +1,5 @@
-import { useGLTF, useAnimations } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
+import { useGLTF, useAnimations } from "@react-three/drei";
 
 import planeScene from "../assets/3d/plane.glb";
 

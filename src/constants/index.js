@@ -1,5 +1,29 @@
-import { car, css, estate, express, git, github, html, javascript, linkedin, mongodb, motion, mui, nextjs, nodejs, pricewise, react, redux, sass, snapgram, summiz, tailwindcss, threads, typescript } from "../assets/icons";
 import { meta, shopify, starbucks, tesla } from "../assets/images";
+import {
+    car,
+    css,
+    estate,
+    express,
+    git,
+    github,
+    html,
+    javascript,
+    linkedin,
+    mongodb,
+    motion,
+    mui,
+    nextjs,
+    nodejs,
+    pricewise,
+    react,
+    redux,
+    sass,
+    snapgram,
+    summiz,
+    tailwindcss,
+    threads,
+    typescript
+} from "../assets/icons";
 
 export const skills = [
     {

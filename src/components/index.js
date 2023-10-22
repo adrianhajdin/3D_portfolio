@@ -1,6 +1,6 @@
-import Loader from "./shared/Loader";
-import Navbar from "./shared/Navbar";
-import Footer from "./shared/Footer";
+import Loader from "./Loader";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 import HomeInfo from "./HomeInfo";
 
 export {

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { arrow, threads } from "../assets/icons";
+
 import { projects } from "../constants";
+import { arrow } from "../assets/icons";
 
 const Projects = () => {
   return (

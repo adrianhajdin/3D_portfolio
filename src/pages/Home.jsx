@@ -1,14 +1,12 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
-import { Bird, Island, Plane, Sky } from "../models";
 import { HomeInfo, Loader } from "../components";
+import { Bird, Island, Plane, Sky } from "../models";
 
 const Home = () => {
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
-
-  console.log({ currentStage });
 
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
@@ -30,10 +28,10 @@ const Home = () => {
 
     if (window.innerWidth < 768) {
       screenScale = [0.5, 0.5, 0.5];
-      screenPosition = [0, -5.7, -43.4];
+      screenPosition = [0, -6.5, -43.4];
     } else {
       screenScale = [1, 1, 1];
-      screenPosition = [0, -5.7, -43.4];
+      screenPosition = [0, -6.5, -43.4];
     }
 
     return [screenScale, screenPosition];
@@ -44,7 +42,7 @@ const Home = () => {
 
   return (
     <section className='w-full h-screen relative'>
-      <div className='absolute top-20 left-0 right-0 z-10 flex items-center justify-center'>
+      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
 
