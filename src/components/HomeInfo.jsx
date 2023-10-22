@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1)
     return (
-      <h1 className='text-2xl font-extrabold sm:leading-snug font-manrope text-center glassmorphism p-4 text-[#1D2235]'>
+      <h1 className='text-2xl font-extrabold sm:leading-snug font-manrope text-center glassmorphism p-4 text-black-500'>
         Hey, I'm
-        <span className='bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-extrabold mx-2'>
+        <span className='blue-gradient_text font-extrabold mx-2'>
           Adrian Hajdin
         </span>
         👋
@@ -22,10 +22,7 @@ const HomeInfo = ({ currentStage }) => {
           and accumulated a growing list of 20+ skills.
         </p>
 
-        <Link
-          to='/about'
-          className='text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center'
-        >
+        <Link to='/about' className='btn'>
           Know more about me
         </Link>
       </div>
@@ -39,10 +36,7 @@ const HomeInfo = ({ currentStage }) => {
           Anything in mind for me? <br /> Feel free to reach out
         </p>
 
-        <Link
-          to='/contact'
-          className='text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-fit sm:w-auto px-5 py-2.5 text-center'
-        >
+        <Link to='/contact' className='btn'>
           Contact
         </Link>
       </div>
@@ -57,10 +51,7 @@ const HomeInfo = ({ currentStage }) => {
           adding to my portfolio of impactful contributions.
         </p>
 
-        <Link
-          to='/projects'
-          className='text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-fit sm:w-auto px-5 py-2.5 text-center'
-        >
+        <Link to='/projects' className='btn'>
           Check my Projects
         </Link>
       </div>

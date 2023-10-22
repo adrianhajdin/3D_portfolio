@@ -10,12 +10,12 @@ import "react-vertical-timeline-component/style.min.css";
 
 const About = () => {
   return (
-    <section className='max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-6 min-h-screen'>
-      <h1 className='sm:text-5xl text-3xl font-extrabold sm:leading-snug font-manrope'>
+    <section className='max-container'>
+      <h1 className='head-text'>
         Hello 👋
         <br />
         I'm{" "}
-        <span className='bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-extrabold drop-shadow'>
+        <span className='blue-gradient_text font-extrabold drop-shadow'>
           Adrian Hajdin
         </span>
       </h1>
@@ -33,21 +33,12 @@ const About = () => {
         </p>
       </div>
 
-      <div class='card my-20' data-color='blue'>
-        <img class='card-front-image card-image' src={hero} />
-        <div class='card-faders'>
-          {Array(7)
-            .fill()
-            .map((_, index) => (
-              <img key={index} class='card-fader card-image' src={hero} />
-            ))}
-        </div>
+      <div className='my-20'>
+        <img className='w-full h-auto object-cover rounded-2xl' src={hero} />
       </div>
 
       <div className='py-20 flex flex-col'>
-        <h3 className='font-bold sm:text-3xl text-xl relative'>
-          My <span className='fancy-text'>Skills.</span>
-        </h3>
+        <h3 className='subhead-text'>My Skills</h3>
 
         <div className='mt-16 flex flex-wrap gap-12'>
           {skills.map((skill) => (
@@ -66,9 +57,7 @@ const About = () => {
       </div>
 
       <div className='py-20'>
-        <h3 className='font-bold sm:text-3xl text-xl relative'>
-          Work <span className='fancy-text'> Experience.</span>
-        </h3>
+        <h3 className='subhead-text'>Work Experience.</h3>
         <div className='mt-10 flex flex-col gap-3 text-slate-500'>
           <p>
             Throughout my career, I've had the privilege to work with a diverse
@@ -112,7 +101,7 @@ const About = () => {
                 }}
               >
                 <div>
-                  <h3 className='text-white text-[24px] font-bold'>
+                  <h3 className='text-white text-2xl  font-bold'>
                     {experience.title}
                   </h3>
                   <p
@@ -127,7 +116,7 @@ const About = () => {
                   {experience.points.map((point, index) => (
                     <li
                       key={`experience-point-${index}`}
-                      className='text-slate-600 font-manrope font-thin pl-1 tracking-wider'
+                      className='text-slate-600 font-thin pl-1 tracking-wider'
                     >
                       {point}
                     </li>

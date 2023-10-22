@@ -4,13 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Poppins", sans-serif;
-}
-
 :root {
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
 }
 
 body:has(.card[data-color="blue"]:hover) {
@@ -21,9 +21,46 @@ body:has(.card[data-color="green"]:hover) {
   background-color: rgb(var(--green-rgb) / 25%);
 }
 
+@layer utilities {
+  .max-container {
+    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-100px)];
+  }
+
+  .head-text {
+    @apply sm:text-5xl text-3xl font-extrabold sm:leading-snug font-manrope;
+  }
+
+  .subhead-text {
+    @apply font-bold sm:text-3xl text-xl relative;
+  }
+
+  .blue-gradient_text {
+    @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
+  }
+
+  .input {
+    @apply bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
+  }
+
+  .textarea {
+    @apply block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
+  }
+
+  .btn {
+    @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
+  }
+
+  .header {
+    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
+  }
+
+  .footer {
+    @apply max-w-5xl mx-auto flex flex-wrap gap-7 items-center py-8 border-t border-slate-200 justify-between sm:px-16 px-8;
+  }
+}
+
 .glassmorphism {
-  background: rgba(255, 255, 255, 0.35);
-  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  background: rgba(8, 116, 239, 0.07);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
@@ -106,113 +143,4 @@ body:has(.card[data-color="green"]:hover) {
 
 .block-container:hover > .btn-front {
   transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
-}
-
-.fancy-text {
-  transform: translate(-50%, -50%);
-  background-image: linear-gradient(#4d9dff, #00c6ff);
-  background-size: 100% 10px;
-  background-repeat: no-repeat;
-  background-position: 0% 100%;
-  transition: background-size 0.7s, background-position 0.5s ease-in-out;
-}
-
-.fancy-text:hover {
-  background-size: 100% 100%;
-  background-position: 0% 100%;
-  transition: background-position 0.7s, background-size 0.5s ease-in-out;
-}
-
-.card {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  cursor: pointer;
-  outline: none;
-  transition: scale 100ms;
-}
-
-.card .card-front-image {
-  position: relative;
-  z-index: 2;
-}
-
-.card .card-image {
-  width: 100%;
-  height: auto;
-  border-radius: clamp(0.5rem, 0.75vw, 2rem);
-}
-
-.card-faders {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 1500ms;
-  pointer-events: none;
-}
-
-.card:hover .card-faders {
-  opacity: 1;
-}
-
-.card:active {
-  scale: 0.98;
-}
-
-.card-fader {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-
-.card-fader:nth-child(odd) {
-  animation: fade-left 3s linear infinite;
-}
-
-.card-fader:nth-child(even) {
-  animation: fade-right 3s linear infinite;
-}
-
-.card-fader:is(:nth-child(3), :nth-child(4)) {
-  animation-delay: 750ms;
-}
-
-.card-fader:is(:nth-child(5), :nth-child(6)) {
-  animation-delay: 1500ms;
-}
-
-.card-fader:is(:nth-child(7), :nth-child(8)) {
-  animation-delay: 2250ms;
-}
-
-@keyframes fade-left {
-  from {
-    scale: 1;
-    translate: 0%;
-    opacity: 1;
-  }
-
-  to {
-    scale: 0.8;
-    translate: -30%;
-    opacity: 0;
-  }
-}
-
-@keyframes fade-right {
-  from {
-    scale: 1;
-    translate: 0%;
-    opacity: 1;
-  }
-
-  to {
-    scale: 0.8;
-    translate: 30%;
-    opacity: 0;
-  }
 }

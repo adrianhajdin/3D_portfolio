@@ -70,23 +70,21 @@ const Contact = () => {
   };
 
   return (
-    <section className='flex lg:flex-row flex-col max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-100px)]'>
+    <section className='flex lg:flex-row flex-col max-container'>
       <div className='flex-1 min-w-[50%] flex flex-col'>
-        <h1 className='sm:text-5xl text-3xl font-extrabold sm:leading-snug font-manrope'>
-          Get in Touch
-        </h1>
+        <h1 className='head-text'>Get in Touch</h1>
 
         <form
           ref={formRef}
           onSubmit={handleSubmit}
           className='w-full flex flex-col gap-7 mt-14'
         >
-          <label className='text-[#1D2235] font-semibold'>
+          <label className='text-black-500 font-semibold'>
             Name
             <input
               type='text'
               name='name'
-              className='bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card'
+              className='input'
               placeholder='John'
               required
               value={form.name}
@@ -95,12 +93,12 @@ const Contact = () => {
               onBlur={handleBlur}
             />
           </label>
-          <label className='text-[#1D2235] font-semibold'>
+          <label className='text-black-500 font-semibold'>
             Email
             <input
               type='email'
               name='email'
-              className='bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card'
+              className='input'
               placeholder='John@gmail.com'
               required
               value={form.email}
@@ -109,12 +107,12 @@ const Contact = () => {
               onBlur={handleBlur}
             />
           </label>
-          <label className='text-[#1D2235] font-semibold'>
+          <label className='text-black-500 font-semibold'>
             Your Message
             <textarea
               name='message'
               rows='4'
-              className='block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card'
+              className='textarea'
               placeholder='Write your thoughts here...'
               value={form.message}
               onChange={handleChange}
@@ -126,7 +124,7 @@ const Contact = () => {
           <button
             type='submit'
             disabled={loading}
-            className='text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center'
+            className='btn'
             onFocus={handleFocus}
             onBlur={handleBlur}
           >

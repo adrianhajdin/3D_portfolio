@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header className='flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0'>
+    <header className='header'>
       <NavLink to='/' className='p-2 logo shadow-2xl'>
-        <p className='font-poppins font-black bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent drop-shadow text-lg tracking-widest'>
+        <p className='font-poppins font-black blue-gradient_text drop-shadow text-lg tracking-widest'>
           AH
         </p>
       </NavLink>

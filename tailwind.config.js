@@ -9,6 +9,9 @@ export default {
       colors: {
         gray: {
           200: "#D5DAE1"
+        },
+        black: {
+          500: "#1D2235"
         }
       },
       fontFamily: {
