@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family:  'Manrope', sans-serif
+  font-family: "Manrope", sans-serif;
 }
 
 :root {
@@ -21,10 +21,20 @@ body:has(.card[data-color="green"]:hover) {
   background-color: rgb(var(--green-rgb) / 25%);
 }
 
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.35);
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
 .logo {
   border-radius: 8.889px;
-  background: #FFF;
-  box-shadow: 0px 10px 35px -4px rgba(67, 83, 255, 0.15), 0px 1.5px 4px -1px rgba(67, 83, 255, 0.20);
+  background: #fff;
+  box-shadow: 0px 10px 35px -4px rgba(67, 83, 255, 0.15),
+    0px 1.5px 4px -1px rgba(67, 83, 255, 0.2);
 }
 
 .block-container {
@@ -33,7 +43,7 @@ body:has(.card[data-color="green"]:hover) {
   perspective: 500px;
 }
 
- .block-container .btn-back {
+.block-container .btn-back {
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -56,7 +66,7 @@ body:has(.card[data-color="green"]:hover) {
 }
 
 .block-container .btn-back-yellow {
-  background: linear-gradient(135deg, #F7971E -20%, #FFD200 120%);
+  background: linear-gradient(135deg, #f7971e -20%, #ffd200 120%);
 }
 
 .block-container .btn-back-blue {
@@ -83,7 +93,7 @@ body:has(.card[data-color="green"]:hover) {
   height: inherit;
   background-color: #ffffff33;
   -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   transition: 250ms;
   transform-style: preserve-3d;
   transform-origin: top left;
@@ -99,18 +109,18 @@ body:has(.card[data-color="green"]:hover) {
 }
 
 .fancy-text {
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-image: linear-gradient(#4d9dff, #00c6ff);
   background-size: 100% 10px;
   background-repeat: no-repeat;
   background-position: 0% 100%;
-   transition: background-size .7s, background-position .5s ease-in-out;
+  transition: background-size 0.7s, background-position 0.5s ease-in-out;
 }
 
 .fancy-text:hover {
   background-size: 100% 100%;
   background-position: 0% 100%;
-  transition: background-position .7s, background-size .5s ease-in-out;
+  transition: background-position 0.7s, background-size 0.5s ease-in-out;
 }
 
 .card {
@@ -185,7 +195,7 @@ body:has(.card[data-color="green"]:hover) {
     translate: 0%;
     opacity: 1;
   }
-  
+
   to {
     scale: 0.8;
     translate: -30%;
@@ -199,7 +209,7 @@ body:has(.card[data-color="green"]:hover) {
     translate: 0%;
     opacity: 1;
   }
-  
+
   to {
     scale: 0.8;
     translate: 30%;

@@ -1,7 +1,7 @@
 import { a } from "@react-spring/three";
+import { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
 
 import islandScene from "../assets/3d/island.glb";
 
@@ -75,21 +75,18 @@ export function Island({
       const normalizedRotation =
         ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
 
-      let stage = Math.floor(normalizedRotation / (Math.PI / 3) + 1);
-
-      // Map stage values to the desired current stage
-      switch (stage) {
-        case 5:
-          setCurrentStage(1);
+      switch (true) {
+        case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
+          setCurrentStage(4);
           break;
-        case 3:
-          setCurrentStage(2);
-          break;
-        case 2:
+        case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
           setCurrentStage(3);
           break;
-        case 6:
-          setCurrentStage(4);
+        case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
+          setCurrentStage(2);
+          break;
+        case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
+          setCurrentStage(1);
           break;
         default:
           setCurrentStage(null);
