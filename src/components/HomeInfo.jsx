@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1)
     return (
-      <h1 className='text-2xl font-extrabold sm:leading-snug font-manrope text-center glassmorphism p-4 text-black-500'>
+      <h1 className='text-2xl sm:leading-snug font-manrope text-center neo-brutalism py-4 px-8 text-white'>
         Hey, I'm
-        <span className='blue-gradient_text font-extrabold mx-2'>
-          Adrian Hajdin
-        </span>
+        <span className='font-extrabold mx-2 text-white'>Adrian Hajdin</span>
         👋
         <br />
         Software Engineer from Croatia

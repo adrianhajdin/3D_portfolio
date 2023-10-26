@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 body:has(.card[data-color="blue"]:hover) {
@@ -143,4 +143,14 @@ body:has(.card[data-color="green"]:hover) {
 
 .block-container:hover > .btn-front {
   transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
+}
+
+/* Neo Brutalism */
+.neo-brutalism {
+  background: #00a9ff;
+  position: relative;
+  border-radius: 10px;
+  border: #00a9ff;
+  box-shadow: 0.6vmin 0.6vmin #00a9ff, 1vmin 1vmin #0092db, 1vmin 1vmin #0092db,
+    0.65vmin 1vmin #0092db, 1vmin 0.65vmin #0092db;
 }
