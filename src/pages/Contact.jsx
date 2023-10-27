@@ -3,7 +3,8 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState } from "react";
 
 import { Fox } from "../models/Fox";
-import { Loader } from "../components";
+import useAlert from "../hooks/useAlert";
+import { Alert, Loader } from "../components";
 
 const Contact = () => {
   const formRef = useRef();
@@ -12,6 +13,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
 
@@ -36,6 +38,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    setCurrentAnimation("hit");
 
     emailjs
       .send(
@@ -52,25 +55,41 @@ const Contact = () => {
       )
       .then(
         () => {
-          setCurrentAnimation("hit");
-
           setLoading(false);
+          showAlert({
+            show: true,
+            text: "Thank you for your message 😃",
+            type: "success",
+          });
+
           setTimeout(() => {
-            alert("Thank you. I will get back to you as soon as possible.");
+            hideAlert(false);
             setCurrentAnimation("idle");
+            setForm({
+              name: "",
+              email: "",
+              message: "",
+            });
           }, [3000]);
         },
         (error) => {
           setLoading(false);
           console.error(error);
+          setCurrentAnimation("idle");
 
-          alert("Ahh, something went wrong. Please try again.");
+          showAlert({
+            show: true,
+            text: "I didn't receive your message 😢",
+            type: "danger",
+          });
         }
       );
   };
 
   return (
-    <section className='flex lg:flex-row flex-col max-container'>
+    <section className='relative flex lg:flex-row flex-col max-container'>
+      {alert.show && <Alert {...alert} />}
+
       <div className='flex-1 min-w-[50%] flex flex-col'>
         <h1 className='head-text'>Get in Touch</h1>
 
