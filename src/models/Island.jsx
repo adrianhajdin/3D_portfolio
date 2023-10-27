@@ -48,27 +48,46 @@ export function Island({
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "ArrowLeft") {
+      if (!isRotating) setIsRotating(true);
+      islandRef.current.rotation.y += 0.01 * Math.PI;
+    } else if (event.key === "ArrowRight") {
+      if (!isRotating) setIsRotating(true);
+      islandRef.current.rotation.y -= 0.01 * Math.PI;
+    }
+  };
+
+  const handleKeyUp = (event) => {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      setIsRotating(false);
+    }
+  };
+
   useEffect(() => {
     const canvas = gl.domElement;
     canvas.addEventListener("pointerdown", handlePointerDown);
     canvas.addEventListener("pointerup", handlePointerUp);
     canvas.addEventListener("pointermove", handlePointerMove);
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+
     return () => {
       canvas.removeEventListener("pointerdown", handlePointerDown);
       canvas.removeEventListener("pointerup", handlePointerUp);
       canvas.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
     };
   }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
 
   useFrame(() => {
     if (!isRotating) {
       rotationSpeed.current *= dampingFactor; // Apply damping factor
-
       if (Math.abs(rotationSpeed.current) < 0.001) {
         // Stop rotation when speed is very small
         rotationSpeed.current = 0;
       }
-
       islandRef.current.rotation.y += rotationSpeed.current;
     } else {
       const rotation = islandRef.current.rotation.y;

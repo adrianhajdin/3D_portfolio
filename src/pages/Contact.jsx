@@ -14,7 +14,7 @@ const Contact = () => {
   const [currentAnimation, setCurrentAnimation] = useState("idle");
 
   const handleChange = ({ target: { name, value } }) => {
-    setForm({ ...form, [name]: value, });
+    setForm({ ...form, [name]: value });
   };
 
   const handleFocus = () => setCurrentAnimation("walk");
@@ -25,18 +25,19 @@ const Contact = () => {
     setLoading(true);
     setCurrentAnimation("hit");
 
-    emailjs.send(
-      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-      {
-        from_name: form.name,
-        to_name: "JavaScript Mastery",
-        from_email: form.email,
-        to_email: "sujata@jsmastery.pro",
-        message: form.message,
-      },
-      import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-    )
+    emailjs
+      .send(
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          to_name: "JavaScript Mastery",
+          from_email: form.email,
+          to_email: "sujata@jsmastery.pro",
+          message: form.message,
+        },
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      )
       .then(
         () => {
           setLoading(false);
@@ -145,8 +146,8 @@ const Contact = () => {
             far: 1000,
           }}
         >
-          <directionalLight position={[0, 0, 1]} intensity={1.5} />
-          <ambientLight intensity={0.5} />
+          <directionalLight position={[0, 0, 1]} intensity={2.5} />
+          <ambientLight intensity={1} />
           <pointLight position={[5, 10, 0]} intensity={2} />
           <spotLight
             position={[10, 10, 10]}
@@ -159,8 +160,8 @@ const Contact = () => {
             <Fox
               currentAnimation={currentAnimation}
               position={[0.5, 0.35, 0]}
-              rotation={[12.629, -0.5, 0]}
-              scale={[0.45, 0.45, 0.45]}
+              rotation={[12.629, -0.6, 0]}
+              scale={[0.5, 0.5, 0.5]}
             />
           </Suspense>
         </Canvas>

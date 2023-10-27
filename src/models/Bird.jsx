@@ -11,10 +11,6 @@ export function Bird() {
 
   useEffect(() => {
     actions["Take 001"].play();
-
-    return () => {
-      Object.values(actions).forEach((action) => action.stop());
-    };
   }, []);
 
   useFrame(({ clock, camera }) => {
