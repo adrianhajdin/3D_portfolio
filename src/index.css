@@ -55,7 +55,11 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .footer {
-    @apply max-w-5xl mx-auto flex flex-wrap gap-7 items-center py-8 border-t border-slate-200 justify-between sm:px-16 px-8;
+    @apply max-w-5xl mx-auto sm:px-16 pb-6 px-8 flex flex-col gap-7;
+  }
+
+  .footer-container {
+    @apply flex flex-wrap gap-7 items-center justify-between;
   }
 
   .info-box {
@@ -64,6 +68,14 @@ body:has(.card[data-color="green"]:hover) {
 
   .neo-btn {
     @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold w-1/2 -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
+  }
+
+  .cta {
+    @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
+  }
+
+  .cta-text {
+    @apply text-black-500 font-extrabold flex-1 text-3xl max-md:text-center;
   }
 }
 

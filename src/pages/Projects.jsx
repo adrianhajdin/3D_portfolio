@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import { projects } from "../constants";
 import { arrow } from "../assets/icons";
+import { CTA } from "../components";
 
 const Projects = () => {
   return (
@@ -22,7 +23,7 @@ const Projects = () => {
         Your collaboration is highly valued!
       </p>
 
-      <div className='flex flex-wrap mt-20 gap-16'>
+      <div className='flex flex-wrap my-20 gap-16'>
         {projects.map((project) => (
           <div className='lg:w-[400px] w-full' key={project.name}>
             <div className='block-container w-12 h-12'>
@@ -58,6 +59,10 @@ const Projects = () => {
           </div>
         ))}
       </div>
+
+      <hr className='border-slate-200' />
+
+      <CTA />
     </section>
   );
 };
