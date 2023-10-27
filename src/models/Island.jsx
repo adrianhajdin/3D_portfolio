@@ -12,7 +12,7 @@ export function Island({
   currentFocusPoint,
   ...props
 }) {
-  const islandRef = useRef(); // Change ref name to islandRef
+  const islandRef = useRef();
   const { gl, viewport } = useThree();
   const { nodes, materials } = useGLTF(islandScene);
 
