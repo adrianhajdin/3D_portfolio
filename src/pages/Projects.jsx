@@ -8,11 +8,10 @@ const Projects = () => {
   return (
     <section className='max-container'>
       <h1 className='head-text'>
-        A Portfolio of{" "}
+        My{" "}
         <span className='blue-gradient_text drop-shadow font-semibold'>
-          Innovative
-        </span>{" "}
-        <br className='sm:block hidden' /> Creations and Developments
+          Projects
+        </span>
       </h1>
 
       <p className='text-slate-500 mt-2 leading-relaxed'>

@@ -3,7 +3,6 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 
-import { hero } from "../assets/images";
 import { experiences, skills } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
@@ -13,31 +12,15 @@ const About = () => {
   return (
     <section className='max-container'>
       <h1 className='head-text'>
-        Hello 👋
-        <br />
-        I'm{" "}
-        <span className='blue-gradient_text font-semibold drop-shadow'>
-          Adrian Hajdin
-        </span>
+        Hello, I'm <span className='blue-gradient_text font-semibold drop-shadow'> Adrian</span> 👋
       </h1>
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
-          Hi, I am Adrian Hajdin. I am a Software Engineer. I am from Croatia.
-        </p>
-        <p>
-          Front-End Engineer / Creative Developer / Game Developer Seeking to
-          take the next step in my career, I am constantly updating my
-          expertise, from Web Development to Game Design. Currently, I am
-          working as a Front-End Engineer at OMRT. OMRT builds a Deep Tech
-          design platform for real estate development.
+          Software Engineer based in Croatia, specializing in technical education through hands-on learning and building applications.
         </p>
       </div>
-
-      <div className='my-10'>
-        <img className='w-full h-auto object-cover rounded-2xl' src={hero} />
-      </div>
-
+      
       <div className='py-10 flex flex-col'>
         <h3 className='subhead-text'>My Skills</h3>
 
@@ -61,21 +44,8 @@ const About = () => {
         <h3 className='subhead-text'>Work Experience.</h3>
         <div className='mt-5 flex flex-col gap-3 text-slate-500'>
           <p>
-            Throughout my career, I've had the privilege to work with a diverse
-            range of companies and organizations, contributing my skills and
-            expertise to various projects. Each experience has added depth to my
-            understanding of the industry, honed my abilities, and allowed me to
-            collaborate with talented individuals. Here's a snapshot of my
-            journey:
+            I've worked with all sorts of companies, leveling up my skills and teaming up with smart people. Here's the rundown:
           </p>
-
-          <p>
-            Each experience has added depth to my understanding of the industry,
-            honed my abilities, and allowed me to collaborate with talented
-            individuals.
-          </p>
-
-          <p>Here's a snapshot of my journey:</p>
         </div>
 
         <div className='mt-12 flex'>
