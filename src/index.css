@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 body:has(.card[data-color="blue"]:hover) {
@@ -27,11 +27,11 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .head-text {
-    @apply sm:text-5xl text-3xl font-extrabold sm:leading-snug font-manrope;
+    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
   }
 
   .subhead-text {
-    @apply font-bold sm:text-3xl text-xl relative;
+    @apply font-semibold sm:text-3xl text-xl relative font-poppins;
   }
 
   .blue-gradient_text {

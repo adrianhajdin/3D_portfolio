@@ -15,12 +15,12 @@ const About = () => {
         Hello 👋
         <br />
         I'm{" "}
-        <span className='blue-gradient_text font-extrabold drop-shadow'>
+        <span className='blue-gradient_text font-semibold drop-shadow'>
           Adrian Hajdin
         </span>
       </h1>
 
-      <div className='mt-10 flex flex-col gap-3 text-slate-500'>
+      <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
           Hi, I am Adrian Hajdin. I am a Software Engineer. I am from Croatia.
         </p>
@@ -33,11 +33,11 @@ const About = () => {
         </p>
       </div>
 
-      <div className='my-20'>
+      <div className='my-10'>
         <img className='w-full h-auto object-cover rounded-2xl' src={hero} />
       </div>
 
-      <div className='py-20 flex flex-col'>
+      <div className='py-10 flex flex-col'>
         <h3 className='subhead-text'>My Skills</h3>
 
         <div className='mt-16 flex flex-wrap gap-12'>
@@ -56,9 +56,9 @@ const About = () => {
         </div>
       </div>
 
-      <div className='py-20'>
+      <div className='py-16'>
         <h3 className='subhead-text'>Work Experience.</h3>
-        <div className='mt-10 flex flex-col gap-3 text-slate-500'>
+        <div className='mt-5 flex flex-col gap-3 text-slate-500'>
           <p>
             Throughout my career, I've had the privilege to work with a diverse
             range of companies and organizations, contributing my skills and
@@ -101,11 +101,11 @@ const About = () => {
                 }}
               >
                 <div>
-                  <h3 className='text-white text-2xl  font-bold'>
+                  <h3 className='text-black text-xl font-poppins font-semibold'>
                     {experience.title}
                   </h3>
                   <p
-                    className='text-gray-950 font-semibold'
+                    className='text-black-500 font-medium text-base'
                     style={{ margin: 0 }}
                   >
                     {experience.company_name}
@@ -116,7 +116,7 @@ const About = () => {
                   {experience.points.map((point, index) => (
                     <li
                       key={`experience-point-${index}`}
-                      className='text-slate-600 font-thin pl-1 tracking-wider'
+                      className='text-black-500/50 font-normal pl-1 text-sm'
                     >
                       {point}
                     </li>

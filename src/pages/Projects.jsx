@@ -8,7 +8,7 @@ const Projects = () => {
     <section className='max-container'>
       <h1 className='head-text'>
         A Portfolio of{" "}
-        <span className='blue-gradient_text drop-shadow font-extrabold'>
+        <span className='blue-gradient_text drop-shadow font-semibold'>
           Innovative
         </span>{" "}
         <br className='sm:block hidden' /> Creations and Developments
@@ -37,16 +37,14 @@ const Projects = () => {
             </div>
 
             <div className='mt-5 flex flex-col'>
-              <b className='text-2xl'>{project.name}</b>
-              <p className='font-manrope mt-2 text-slate-500'>
-                {project.description}
-              </p>
+              <b className='text-2xl font-poppins'>{project.name}</b>
+              <p className='mt-2 text-slate-500'>{project.description}</p>
               <div className='mt-5 flex items-center gap-2'>
                 <Link
                   to={project.link}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className=' font-manrope font-semibold text-blue-600'
+                  className='font-semibold text-blue-600'
                 >
                   Live Link
                 </Link>

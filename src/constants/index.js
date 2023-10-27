@@ -1,6 +1,7 @@
 import { meta, shopify, starbucks, tesla } from "../assets/images";
 import {
     car,
+    contact,
     css,
     estate,
     express,
@@ -163,13 +164,12 @@ export const experiences = [
     },
 ];
 
-
 export const socialLinks = [
-    // {
-    //     name: 'Twitter',
-    //     iconUrl: twitter,
-    //     link: 'https://twitter.com/YourTwitterUsername',
-    // },
+    {
+        name: 'Contact',
+        iconUrl: contact,
+        link: '/contact',
+    },
     {
         name: 'GitHub',
         iconUrl: github,

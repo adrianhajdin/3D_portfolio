@@ -23,6 +23,7 @@ import snapgram from './snapgram.svg'
 import summiz from './summiz.svg'
 import threads from './threads.svg'
 import arrow from './arrow.svg'
+import contact from './contact.svg'
 
 export {
     css,
@@ -49,5 +50,6 @@ export {
     snapgram,
     summiz,
     threads,
-    arrow
+    arrow,
+    contact
 }
