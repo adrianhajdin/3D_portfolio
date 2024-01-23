@@ -100,6 +100,23 @@ export function Island({
     }
   };
 
+// Handle mouse wheel event for rotation
+const handleWheel = (event) => {
+  const delta = event.deltaY;
+
+  // Control the sensitivity and max rotation speed
+  const rotationAmount = Math.min(Math.max(delta * 0.1, -0.2), 0.1);
+
+  setIsRotating(true);
+
+
+  islandRef.current.rotation.y += rotationAmount;
+  // Clear any existing timeout
+  clearTimeout(islandRef.current.rotationEndTimeout);
+  setTimeout(() => setIsRotating(false), 150);
+
+};
+
   useEffect(() => {
     // Add event listeners for pointer and keyboard events
     const canvas = gl.domElement;
@@ -108,6 +125,9 @@ export function Island({
     canvas.addEventListener("pointermove", handlePointerMove);
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
+    canvas.addEventListener("wheel", handleWheel);
+
+    console.log("Event listeners added for wheel");
 
     // Remove event listeners when component unmounts
     return () => {
@@ -116,6 +136,7 @@ export function Island({
       canvas.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
+      canvas.removeEventListener("wheel", handleWheel);
     };
   }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
 
@@ -135,6 +156,7 @@ export function Island({
     } else {
       // When rotating, determine the current stage based on island's orientation
       const rotation = islandRef.current.rotation.y;
+
 
       /**
        * Normalize the rotation value to ensure it stays within the range [0, 2 * Math.PI].
