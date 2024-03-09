@@ -2,32 +2,29 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-
+import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 import { CTA } from "../components";
 import { experiences, skills } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
-
+const words = `Software Engineer based in Kenya, specializing in technical education through hands-on learning and building applications.`;
 const About = () => {
   return (
-    <section className='max-container'>
-      <h1 className='head-text'>
+    <section className='max-container '>
+      <h1 className='head-text relative z-30'>
         Hello, I'm{" "}
         <span className='blue-gradient_text font-semibold drop-shadow'>
           {" "}
-          Adrian
+          Vitalis
         </span>{" "}
         👋
       </h1>
 
-      <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-        <p>
-          Software Engineer based in Croatia, specializing in technical
-          education through hands-on learning and building applications.
-        </p>
+      <div className='mt-5 flex flex-col gap-3 text-slate-500 relative z-30'>
+        <TextGenerateEffect words={words} />
       </div>
 
-      <div className='py-10 flex flex-col'>
+      <div className='py-10 flex flex-col relative z-30'>
         <h3 className='subhead-text'>My Skills</h3>
 
         <div className='mt-16 flex flex-wrap gap-12'>
@@ -46,7 +43,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className='py-16'>
+      <div className='py-16 relative z-30'>
         <h3 className='subhead-text'>Work Experience.</h3>
         <div className='mt-5 flex flex-col gap-3 text-slate-500'>
           <p>
