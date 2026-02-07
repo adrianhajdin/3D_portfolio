@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://gabnix.github.io/3D_portfolio/",
+  "homepage": "https://gabnix.github.io/3d_portfolio/",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
